@@ -13,5 +13,5 @@ People are encouraged to contribute by introducing useful new information,
 fixing errors, typos, inaccuracies or clarifying where necessary.
 See [How to contribute](contribute/) for a detailed explanation how.
 
-### [Apex Paper](misc/apexpaper.pdf)
+### [Apex Paper](https://lirias.kuleuven.be/handle/123456789/184286)
 
