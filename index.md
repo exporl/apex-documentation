@@ -11,7 +11,7 @@ is still incomplete and bound to contain errors and inaccuracies.
 
 People are encouraged to contribute by introducing useful new information,
 fixing errors, typos, inaccuracies or clarifying where necessary.
-See [How to contribute](contribute/) for a detailed explanation how.
+Simply click the ribbon in the top right corner to start editing.
 
 ### [Apex Paper](https://lirias.kuleuven.be/handle/123456789/184286)
 
