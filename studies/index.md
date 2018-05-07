@@ -8,36 +8,58 @@ optionally upload results to a branch in that repository.
 Public studies only download experiments, while private studies will also
 attempt to upload their results to the repository.
 
+Note that this documentation refers to an internal page for managing studies,
+and as such is not (completely) applicable to external installations.
+
 Getting started
 ---------------
 
-### public study
+### creating a study
 
-1. Create a git repository on a server. Commit your experiments to a branch in
-   this repository.
+Go to `https://exporl.med.kuleuven.be/apex-study/` and press the
+`Studies` button. On the studies page press `Add study`. Fill in the
+form and press `Submit`.
 
-2. In APEX go to `file > link a new study`. If no studies are present you will
+You can also update a study (add branches and view linked
+devices) on the studies page.
+
+### linking to public study
+
+1. In APEX go to `file > link a new study`. If no studies are present you will
    be sent to the `Secure Shell keys` tab.
 
-3. For a public study you can ignore this and go straight to `New...` on the
-   `Studies` tab.
+2. Copy paste the contents of the `Public key` box into the device dialog at
+   `https://exporl.med.kuleuven.be/apex-study/`. On Android you can press
+   the `Share` button and a browser with this page will be opened, with
+   the url already filled in.
 
-4. Simple paste the url to your git repository there. Libgit2 can use
-   http/https[^1] or ssh.
+3. Give the device access to your study. At
+   `https://exporl.med.kuleuven.be/apex-study/` go to `Link device to study`.
+   Click on a device (or multiple ones), select a study and one or more branches
+   and press `Link`.
 
-5. Uncheck `Upload results`. Select the branch containing the experiment files,
+4. Then go to `New...` on the `Studies` tab.
+
+5. Simple paste the url to your git repository inside the `Url` field.
+   Libgit2 can use http/https[^1] or ssh.
+
+6. Uncheck `Upload results`. Select the branch containing the experiment files,
    and click `Link study`.
 
-### private study
+### linking to private study
 
-1. Create a git repository on a server. Commit your experiments to a branch in
-this repository.
-
-2. In APEX go to `file > link a new study`. If no studies are present you will
+1. In APEX go to `file > link a new study`. If no studies are present you will
    be sent to the `Secure Shell keys` tab.
 
-3. For a private study use the secure shell key to give your machine access[^2]
-   to your repository.
+2. Copy paste the contents of the `Public key` box into the device dialog at
+   `https://exporl.med.kuleuven.be/apex-study/`. On Android you can press
+   the `Share` button and a browser with this page will be opened, with
+   the url already filled in.
+
+3. Give the device access to your study. At
+   `https://exporl.med.kuleuven.be/apex-study/` go to `Link device to study`.
+   Click on a device (or multiple ones), select a study and one or more branches
+   and press `Link`.
 
 4. Then go to `New...` on the `Studies` tab.
 
@@ -60,7 +82,3 @@ cannot read results belonging to other devices.
 
 [^1]: Note that on Linux Libgit2 provided by the package manager might not be
     able to use the https protocol because of OpenSSL license issues.
-
-[^2]: Example [Github
-    guide](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/#platform-windows). Use
-    the public key from the studies dialog.
