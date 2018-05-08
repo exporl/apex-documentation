@@ -9,7 +9,7 @@ Public studies only download experiments, while private studies will also
 attempt to upload their results to the repository.
 
 Note that this documentation refers to an internal page for managing studies,
-and as such is not (completely) applicable to external installations.
+and as such is not (completely) applicable to external installations [^1].
 
 Getting started
 ---------------
@@ -41,7 +41,7 @@ devices) on the studies page.
 4. Then go to `New...` on the `Studies` tab.
 
 5. Simple paste the url to your git repository inside the `Url` field.
-   Libgit2 can use http/https[^1] or ssh.
+   Libgit2 can use http/https[^2] or ssh.
 
 6. Uncheck `Upload results`. Select the branch containing the experiment files,
    and click `Link study`.
@@ -79,6 +79,9 @@ server in such a way that a single device can only access the experiment branch
 cannot read results belonging to other devices.
 
 #### Notes
+[^1]: For more technical information see [Setting up Gerrit for use with Apex
+    studies](../development/misc/studies-gerrit#Setting up Gerrit for use with
+    Apex studies)
 
-[^1]: Note that on Linux Libgit2 provided by the package manager might not be
+[^2]: Note that on Linux Libgit2 provided by the package manager might not be
     able to use the https protocol because of OpenSSL license issues.
