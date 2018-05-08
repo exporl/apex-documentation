@@ -70,6 +70,77 @@ devices) on the studies page.
    make sure the machine has access to your repository. Once a branch is
    selected click `Link study`.
 
+### uploading experiments
+
+To upload new experiments all that is needed is to push experiments to a
+specific branch of the git repository. For instance if a study was created with
+an experiment branch called `experiments-1` the workflow would be as followed:
+
+```shell
+# Clone the repository
+# you can find the url on
+# https://exporl.med.kuleuven.be/apex-experiments/
+# under projects.
+git clone <url>
+cd <repository>
+# First create a commit.
+git add <experiment files and stimuli>
+git commit
+
+# Push to the experiment branch.
+git push origin HEAD:refs/heads/experiments-1
+```
+
+If there is a flowrunner (.apf file) present in the root directory of the
+project, Apex will open that file when starting the study. If no flowrunners are
+present in the project root directory, the user will be able to choose out of a
+list containing all the apf and apx files present in the project (so including
+subfolders) each time the study is started.
+
+If multiple flowrunners are present in the project root directory, *index.apf*
+will take precedence. If the latter is not present, one is chosen at random.
+
+### fetching results
+
+Fetching the results is somewhat complex because the result branches don't have
+any shared history. Result branches are prefixed with `results-`. `git branch
+--list -a origin/results-*` lists all result branches.
+
+```shell
+# Clone the repository
+# you can find the url on
+# https://exporl.med.kuleuven.be/apex-experiments/
+# under projects.
+git clone <url>
+cd <repository>
+
+# Checkout a branch to collect the results on.
+git checkout --orphan collected-results
+git rm --cached -r .
+git clean -fd
+
+# Create a base commit, merging won't work without one.
+git commit --allow-empty -m "Base commit for merge."
+
+# List all result branches.
+BRANCHES=$(git branch -a --list origin/results-*)
+# Merge all branches onto collected-results.
+# The actual merge will fail,
+# but it will give the right history.
+git merge --allow-unrelated-histories -s octopus $BRANCHES
+# Read the content of each branches into the index.
+git read-tree $BRANCHES
+# Commit them into collected-results.
+git commit -m "Merge $BRANCHES into collected-results."
+# Reset index.
+git reset --hard
+```
+
+The results should now be collected on the `collected-results` branch, and
+present in your working directory. To update the branch with new results, do
+`git fetch origin; git checkout collected-results;` and then repeat the steps in
+the above script starting from *"\#List all result branches."*.
+
 Security
 --------
 
