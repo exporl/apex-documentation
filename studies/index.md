@@ -28,9 +28,7 @@ devices) on the studies page.
 1. In APEX go to `file > link a new study`. If no studies are present you will
    be sent to the `Secure Shell keys` tab.
 
-2. Copy paste the contents of the `Public key` box into the device dialog at
-   `https://exporl.med.kuleuven.be/apex-study/`. On Android you can press
-   the `Share` button and a browser with this page will be opened, with
+2. Press the `Share` button and a browser with this page will be opened, with
    the url already filled in.
 
 3. Give the device access to your study. At
@@ -51,9 +49,7 @@ devices) on the studies page.
 1. In APEX go to `file > link a new study`. If no studies are present you will
    be sent to the `Secure Shell keys` tab.
 
-2. Copy paste the contents of the `Public key` box into the device dialog at
-   `https://exporl.med.kuleuven.be/apex-study/`. On Android you can press
-   the `Share` button and a browser with this page will be opened, with
+2. Press the `Share` button and a browser with this page will be opened, with
    the url already filled in.
 
 3. Give the device access to your study. At
