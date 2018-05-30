@@ -1,5 +1,5 @@
-Building
-========
+Building {#Building}
+====================
 
 The libraries and tools necessary for APEX are built in the
 `tools/android-prepare-api.sh` and `tools/android-build.sh` scripts. These
@@ -62,3 +62,31 @@ Debug version
 
 The debug version which you build yourself can be installed with the Android
 debugging bridge (adb).
+
+Android build server
+====================
+
+To build the release version on a build server, first follow the [building
+steps](#Building) above. `tools/android-prepare-api.sh` can easily take 15
+minutes, so make sure the it doesn't have to be called each build.
+
+Building release version
+------------------------
+
+To build a release version you'll need to supply the following parameters to
+`tools/android-build.sh`:
+
+1. `-r`: for release.
+
+2. `--ks`: path to the keystore containing the key which the apk will be signed
+   with.
+
+3. `--ks-pass`: this is the keystore password. The safest way to specify the
+   password is in a file. The path should be prefixed with "file:".
+
+F-Droid
+-------
+
+To publish the apk to the fdroid repo, simply copy it to the repository folder
+and call the deploy script, see the [Apex release
+guide](apex-release-guide.md#releasing-binaries-android) for more information.

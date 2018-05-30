@@ -39,7 +39,7 @@ changes have been committed and a master build has been completed.
 Copy the installer (`.msi` file) built by the buildserver to the folder with
 similar files. Then add a link on the downloads page to the new installer.
 
-### Android
+### Android {#releasing-binaries-android}
 
 To release a new Android version to the F-Droid repository, trigger the
 apex-android-release project on the buildserver. It's best to do this right
