@@ -1,14 +1,14 @@
-Bertha in Apex
+Bertha in APEX
 ==============
 
-The goal of this page is to document how Bertha interfaces with Apex, what
+The goal of this page is to document how Bertha interfaces with APEX, what
 functions it performs, and to discuss future improvements. The previous system
-will be called Streamapp-connections, and the new system Bertha. Apex can switch
+will be called Streamapp-connections, and the new system Bertha. APEX can switch
 between the two systems with the cli argument `--disable-bertha` or using
 apexconfig.
 
 Bertha is responsible for most of the audio processing, Bertha's output gets
-handed to Apex which forwards it to the soundcard.
+handed to APEX which forwards it to the soundcard.
 
 Previous system:
 
@@ -18,10 +18,10 @@ New system:
 
 Bertha &rarr; ringbuffer &rarr; soundcard (Asio, Portaudio, etc...)
 
-Apex data to Bertha data
+APEX data to Bertha data
 --------------------------------------------
 
-When Apex parses an experiment, it will build the `ExperimentData`. This object
+When APEX parses an experiment, it will build the `ExperimentData`. This object
 contains `ConnectionsData`, which describes how individual blocks (audio
 sources, filters, ...) should be arranged and connected.
 
@@ -54,6 +54,10 @@ During the Experiment
 
 ### BerthaBuffer
 
+The interface between APEX and Bertha is located in `BerthaBuffer`. It provides
+an interface to start, stop, and set parameters at runtime. Note that it doesn't
+contain an actual sound buffer, so the naming is a bit unfortunate.
+
 The major difference between Streamapp-connections and Bertha during the
 experiment is that Bertha doesn't stop between trials. It is always
 continuous[^1].
@@ -63,9 +67,7 @@ During the experiments some leaf nodes in Bertha's tree structure are
 are redundant, are discarded. The set of active leaf nodes can change each
 trial, and all nodes are reinstantiated at the start of each trial.
 
-The interface between Apex and Bertha is located in `BerthaBuffer`. It provides
-an interface to start, stop, and set parameters at runtime. Some functions that
-require explanation:
+Some functions that require explanation:
 
 * `BerthaBuffer::addPermanentLeafNode`: these permanent leaf nodes will always
   be active as long as Bertha is running. In practice these are *continuous*
@@ -97,7 +99,7 @@ always a permanent leaf node.
 When a filter isn't a leaf node and not connected to any leaf nodes, it's simply
 discarded. So no harm is done by adding all filters.
 
-### Bertha to Apex
+### Bertha to APEX
 
 `WavDeviceBufferThread` is responsible for copying the data from Bertha to the
 ringbuffer. When this thread is running it calls `BerthaBuffer::processStream`
@@ -186,5 +188,5 @@ alternatives. For instance the `Stream` object in `BerthaBuffer`.
 
 [^1]: It is not always continuous with a virtual soundcard used for testing, to
     guarantee identical audio output between Streamapp-connections and Bertha.
-    As long as Apex ships both systems, the "linux-experimenttests" should run
+    As long as APEX ships both systems, the "linux-experimenttests" should run
     with both systems.
