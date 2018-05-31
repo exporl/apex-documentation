@@ -7,6 +7,8 @@ Apex development documentation
 
 #### [Release guide](apex-release-guide.md)
 
+#### [Study Apex structure](studies-apex.md)
+
 #### [Study gerrit structure](studies-gerrit.md)
 
 #### [Windows debugging](windows-debugging.md)
