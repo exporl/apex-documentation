@@ -1,4 +1,4 @@
-Building Apex for android {#Building}
+Building Apex for Android {#Building}
 =====================================
 
 The libraries and tools necessary for APEX are built in the
@@ -12,15 +12,15 @@ Requirements
 Other than the requirements found in compiling_instructions you will need the
 following:
 
-##### Qt 5.6 for android
+##### Qt 5.6 for Android
 
-Because Qt 5.7 for android requires C++11 support, and the ndk used does not
+Because Qt 5.7 for Android requires C++11 support, and the ndk used does not
 support C++11, Qt 5.6 is required. Ndk r9b is used, newer versions can't build
 some of the libraries required.
 
 ##### Java 32bit
 
-Qt for android needs a 32bit java jdk. The script retrieves the location from
+Qt for Android needs a 32bit java jdk. The script retrieves the location from
 updata-java-alternatives. If no i386 installation is found, no apk can be built
 and installed, but APEX will build.
 
