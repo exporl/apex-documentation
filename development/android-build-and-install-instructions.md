@@ -1,10 +1,10 @@
-Building {#Building}
-====================
+Building Apex for android {#Building}
+=====================================
 
 The libraries and tools necessary for APEX are built in the
 `tools/android-prepare-api.sh` and `tools/android-build.sh` scripts. These
 scripts were made for Linux, while it's possible to build on Windows no scripts
-or documentation is provided.
+or documentation are provided.
 
 Requirements
 ------------
@@ -24,15 +24,31 @@ Qt for android needs a 32bit java jdk. The script retrieves the location from
 updata-java-alternatives. If no i386 installation is found, no apk can be built
 and installed, but APEX will build.
 
-##### Android openssl
+##### Android OpenSSL
 
-We compile openssl as a static archive for android. The shared object will
-conflict with the system ssl (which is not part of the public api) because of
-similar symbols.
+We compile OpenSSL as a static archive for Android. The SO (shared object) will
+conflict with the system's SO (which is not part of the public api) because of
+similar symbols. The symbols from the system SO will already be loaded, and Apex
+will pick those over the symbols in our SO.
+
+It would work if the SO's had versioned symbols, but there's no way to guarantee
+that the system's SO would have these. It could also work if we manage to build
+a SO with an ABI identical to the system's SO (for each device), but that's an
+impossible task.
+
+By shipping it as a static archive, OpenSSL is simply included within Apex, and
+we avoid any calls to `dlopen`.
 
 ##### Build tools
 
-Autotools and AutoGen are needed for the `tools/android-prepare-api.sh` script.
+Autotools, CMake, and AutoGen are needed for the `tools/android-prepare-api.sh` script.
+
+##### Ubuntu version
+
+No specific Ubuntu version is needed. The scripts should work if all the
+dependencies compile with the build tools available on your platform, any
+platform with recent versions of Autotools and CMake should do. The scripts were
+tested with ubuntu 14, 16, and 18 LTS.
 
 Dependencies and APEX binaries
 ------------------------------
@@ -79,10 +95,15 @@ To build a release version you'll need to supply the following parameters to
 1. `-r`: for release.
 
 2. `--ks`: path to the keystore containing the key which the apk will be signed
-   with.
+   with. This key is stored in a JKS keystore.
 
 3. `--ks-pass`: this is the keystore password. The safest way to specify the
    password is in a file. The path should be prefixed with "file:".
+
+APKs need to be signed so the user can verify that any next version is issued by
+us. The public key certificate included with the APK is self-signed. The JKS
+keystore and password should be kept in a safe location. Only the Android build
+server should have access to these.
 
 F-Droid
 -------
