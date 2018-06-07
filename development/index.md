@@ -1,4 +1,4 @@
-Apex development documentation
+APEX development documentation
 ==============================
 
 #### [Android build and install instructions](android-build-and-install-instructions.md)
@@ -7,7 +7,7 @@ Apex development documentation
 
 #### [Release guide](apex-release-guide.md)
 
-#### [Study Apex structure](studies-apex.md)
+#### [Study APEX structure](studies-apex.md)
 
 #### [Study gerrit structure](studies-gerrit.md)
 

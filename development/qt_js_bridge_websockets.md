@@ -1,6 +1,6 @@
 ### WebSocketServer
 
-The websocket server handles all communication between apex and the webview.
+The websocket server handles all communication between APEX and the webview.
 
 #### Message types
 
@@ -22,7 +22,7 @@ returnId: "someUniqueId"
 }
 ```
 
-This message is meant for calling exposed apex methods from the webview.
+This message is meant for calling exposed APEX methods from the webview.
 The websocket server allows installing QObjects of which Q_INVOKABLES can be
 invoked with this message.
 

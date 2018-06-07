@@ -1,4 +1,4 @@
-Preparing a release version of Apex
+Preparing a release version of APEX
 ===================================
 
 Requirements
@@ -21,11 +21,11 @@ worktree, it will:
   data/config, and in examples.
 * Call the apex-schema-documentation script, which&mdash;when supplied with
   the `--oxygen` directory&mdash;will make the necessary changes to the
-  apex3-documentation-schemas worktree.
+  apex-documentation-schemas worktree.
 
 The changes will still need to be committed. Start in
-apex3-documentation-schemas, which is a submodule of apex3-documentation. Then
-commit the updated submodule to apex3-documentation. As a final step commit the
+apex-documentation-schemas, which is a submodule of apex-documentation. Then
+commit the updated submodule to apex-documentation. As a final step commit the
 documentation submodule together with the changes made in the Apex root project.
 
 Releasing binaries
@@ -53,14 +53,14 @@ deploy script on the buildserver. See the tools/fdroid folder as an example.
 Github code dump
 ----------------
 
-As Apex is open source, the code is uploaded to github with each release. This
+As APEX is open source, the code is uploaded to github with each release. This
 is a simple code dump without git history and without submodules. Note that the
 content of the submodules should be committed, just the `.gitmodules` file and
 the `.git` folders in each of the submodules should not be committed.
 
-Copy all the files (with exception of the `.git` folder) from your Apex gerrit
-clone to an Apex github clone, and commit. It's advised to `git clean -fxd` in
-your Apex gerrit clone before copying to make sure no binaries or unnecessary
+Copy all the files (with exception of the `.git` folder) from your APEX gerrit
+clone to an APEX github clone, and commit. It's advised to `git clean -fxd` in
+your APEX gerrit clone before copying to make sure no binaries or unnecessary
 files get copied. The result should be similar to this:
 
 ```shell

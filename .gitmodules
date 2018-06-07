@@ -1,3 +1,3 @@
-[submodule "apex3-documentation-schemas"]
-	path = apex3-documentation-schemas
-	url = https://github.com/exporl/apex3-documentation-schemas
+[submodule "apex-documentation-schemas"]
+	path = apex-documentation-schemas
+	url = https://github.com/exporl/apex-documentation-schemas
