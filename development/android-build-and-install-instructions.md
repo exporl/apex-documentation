@@ -1,4 +1,4 @@
-Building Apex for Android {#Building}
+Building APEX for Android {#Building}
 =====================================
 
 The libraries and tools necessary for APEX are built in the
@@ -28,7 +28,7 @@ and installed, but APEX will build.
 
 We compile OpenSSL as a static archive for Android. The SO (shared object) will
 conflict with the system's SO (which is not part of the public api) because of
-similar symbols. The symbols from the system SO will already be loaded, and Apex
+similar symbols. The symbols from the system SO will already be loaded, and APEX
 will pick those over the symbols in our SO.
 
 It would work if the SO's had versioned symbols, but there's no way to guarantee
@@ -36,7 +36,7 @@ that the system's SO would have these. It could also work if we manage to build
 a SO with an ABI identical to the system's SO (for each device), but that's an
 impossible task.
 
-By shipping it as a static archive, OpenSSL is simply included within Apex, and
+By shipping it as a static archive, OpenSSL is simply included within APEX, and
 we avoid any calls to `dlopen`.
 
 ##### Build tools
@@ -109,5 +109,5 @@ F-Droid
 -------
 
 To publish the apk to the fdroid repo, simply copy it to the repository folder
-and call the deploy script, see the [Apex release
+and call the deploy script, see the [release
 guide](apex-release-guide.md#releasing-binaries-android) for more information.
