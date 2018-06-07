@@ -1,7 +1,7 @@
-Structure of studies within Apex
+Structure of studies within APEX
 ================================
 
-This page documents the implementation details of studies within Apex. Starting
+This page documents the implementation details of studies within APEX. Starting
 from the lowest layer.
 
 ManagedDirectory
@@ -28,7 +28,7 @@ StudyManager
 ------------
 
 This class ties it all together and provides the interface for anything study
-related to the rest of Apex. It has several responsibilities.
+related to the rest of APEX. It has several responsibilities.
 
 It has a global instance which should be used for all networking related
 functions[^1]. That is functions which update results or experiments. Note that
@@ -75,7 +75,7 @@ starting another.
 StudyRunner
 -----------
 
-When an active study is set and Apex is started with `--pluginrunner study`[^4],
+When an active study is set and APEX is started with `--pluginrunner study`[^4],
 it will load the index experiment of said study, or provide a list of all
 experiments in the study if no index was found.
 

@@ -6,11 +6,11 @@ On windows the following command adds the symbols (consisting of executables, sh
 "%SYMSTOREDIR%\symstore.exe" add /r /s %APEXSYMSTORE% /t "Apex" /v "Build %BUILD_NUMBER%" /f "bin\%RELEASETYPE%-installed\bin\*.*"
 `
 
-This is executed every Apex master build.
+This is executed every APEX master build.
 
 ### Crash dumps
 
-When Apex crashes it will make a minidump at the location of the executable. Together with the symbols from the symbol store these can be used to recreate the state Apex was in at the point of the crash.
+When APEX crashes it will make a minidump at the location of the executable. Together with the symbols from the symbol store these can be used to recreate the state APEX was in at the point of the crash.
 
 ### WinDbg
 

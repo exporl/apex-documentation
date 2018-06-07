@@ -1,7 +1,7 @@
 Building
 ========
 
-The libraries and tools necessary for apex are built in the
+The libraries and tools necessary for APEX are built in the
 `tools/android-prepare-api.sh` and `tools/android-build.sh` scripts. These
 scripts were made for Linux, while it's possible to build on Windows no scripts
 or documentation is provided.
@@ -22,7 +22,7 @@ some of the libraries required.
 
 Qt for android needs a 32bit java jdk. The script retrieves the location from
 updata-java-alternatives. If no i386 installation is found, no apk can be built
-and installed, but apex will build.
+and installed, but APEX will build.
 
 ###### Android openssl
 
@@ -34,7 +34,7 @@ similar symbols.
 
 Autotools and AutoGen are needed for the `tools/android-prepare-api.sh` script.
 
-Dependencies and Apex binaries
+Dependencies and APEX binaries
 ------------------------------
 
 To crosscompile all the dependencies the `tools/android-prepare-api.sh` script
