@@ -10,8 +10,8 @@ be installed to generate the schema documentation.
 To release the binaries you'll also need access to the webserver and the build
 server.
 
-Making the changes
-------------------
+Minor version change
+--------------------
 
 The linux-new-version script in tools makes all the needed changes to the
 worktree, it will:
@@ -27,6 +27,19 @@ The changes will still need to be committed. Start in
 apex-documentation-schemas, which is a submodule of apex-documentation. Then
 commit the updated submodule to apex-documentation. As a final step commit the
 documentation submodule together with the changes made in the Apex root project.
+
+Major version change
+--------------------
+
+When increasing a major version, some more manual work will be required. The
+following will need to be updated:
+
+* GPL header in header and source files.
+* Licenses in documentation and the documentation itself.
+* The website's index, download and registration page.
+* Github project description.
+* Jenkins configurations: archiving artifacts, publishing artifacts.
+
 
 Releasing binaries
 ------------------
