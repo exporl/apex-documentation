@@ -571,7 +571,7 @@ APEX will call the following functions:
 When the screen is enabled:
 
 ```javascript
-    reset(); enabled();
+    enabled();
 ```
 
 When the trial is finished, and the screenresult is needed:
@@ -580,7 +580,7 @@ When the trial is finished, and the screenresult is needed:
     getResult();    // returns string
 ```
 
-When the user has finished answering, should be called.
+When the user has finished answering, `api.answered()` should be called.
 
 ### HtmlAPI <a name="htmlapi"/>
 
