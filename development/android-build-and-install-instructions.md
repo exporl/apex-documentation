@@ -16,9 +16,7 @@ following:
 
 Installation automated by the `tools/android-prepare-api.sh` script.
 
-##### Java 32bit
-
-Qt for Android needs a 32bit java jdk. If no i386 installation is found, no apk can be built and installed, but APEX will build.
+##### Java
 
 ##### Android OpenSSL
 
