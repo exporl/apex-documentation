@@ -2939,22 +2939,6 @@ How
 
 :   Results: show results during experiment
 
-#### results/results-psignifit.apx
-
-Short
-
-:   Demonstrate the use of ’psignifit’ results
-
-Description
-
-:   APEX contains an implementation of the psignifit library, which can
-    fit psychometric functions to data
-
-How
-
-:   Psignifit is called from the resultsviewer and the SRT and slope are
-    shown numerically
-
 #### results/results-resultparameters.apx
 
 Short
