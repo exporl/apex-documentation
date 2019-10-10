@@ -80,7 +80,7 @@ Copy the xsd files from your local working directory to the webserver so they ar
 through http. From your local apex worktree do:
 
 ```shell
-scp -r data/schemas username@exporl-ssh.med.kuleuven.be:/var/www/apex/schemas/x.x.x
+rsync -r data/schemas/*.xsd username@exporl-ssh.med.kuleuven.be:/var/www/apex/schemas/x.x.x
 ```
 
 ### 
