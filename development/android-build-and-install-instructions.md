@@ -84,7 +84,7 @@ To build a release version you'll need to supply the following parameters to
 2. `--ks`: path to the keystore containing the key which the apk will be signed
    with. This key is stored in a JKS keystore.
 
-3. `--ks-pass-path`: this is the path to a file containing the keystore password.
+3. `--ks-pass`: this is the keystore password.
 
 APKs need to be signed so the user can verify that any next version is issued by
 us. The public key certificate included with the APK is self-signed. The JKS
