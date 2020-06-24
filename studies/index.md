@@ -128,6 +128,16 @@ present in your working directory. To update the branch with new results, do
 `git fetch origin` and then repeat the steps in
 the above procedure starting from `# Checkout 'all-results' branch`.
 
+### manually fetching the results
+
+All Apex files associated with a study and their results are saved to a specific folder associated with the study. These folders can be found inside the apexStudies folder, which in term can always be found in a user-visible location on all platforms. These files can always be retrieved manually in case the user wants to check them manually.
+On Android devices a special folder is made in the sdcard root (the first visible location in the Android file system). On windows, the study folder can be found in `..\AppData\Local\apexStudies\` .
+
+Note that in older versions of Apex the study save path on Android devices used to be a hidden in the Apex data folder. Old studies are not automatically moved to the new location, so in order to manually access this location you must use Android debug tools or Android Studio.
+
+Results created by Apex experiments inside a study are always saved to the same location. In the case of public studies results are saved to the general study folder, in the case of private studies this is a dedicated study results folder. This is important in the latter case, since the user expects results to be properly synchronized through the study functionality. This is only possible when the results are saved to the correct location.
+Note that while using a flowrunner, one can usally choose a custom path to save the results of an experiment. In order to respect the previous rule however, only the specified file name is actually used. Any user-specified result path is ignored when using a flowrunner inside an active study.
+
 Security
 --------
 
