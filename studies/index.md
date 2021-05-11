@@ -78,7 +78,7 @@ an experiment branch called `experiments-1` the workflow would be as followed:
 ```shell
 # Clone the repository
 # you can find the url on
-# https://exporl.med.kuleuven.be/apex-experiments/
+# https://exporl.gbiomed.kuleuven.be/gerrit-study/
 # under projects.
 git clone <url>
 cd <repository>
@@ -107,7 +107,7 @@ Result branches are prefixed with `results-`. `git branch
 ```shell
 # Clone the repository
 # you can find the url on
-# https://exporl.med.kuleuven.be/apex-experiments/
+# https://exporl.gbiomed.kuleuven.be/gerrit-study/
 # under projects.
 git clone <url>
 cd <repository>
